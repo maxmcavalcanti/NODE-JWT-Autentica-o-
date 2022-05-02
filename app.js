@@ -7,6 +7,9 @@ const jwt = require("jsonwebtoken");
 const router = require("./routers/router");
 
 const app = express();
+const cors = require("cors");
+
+app.use(cors());
 
 //Config JSON response
 app.use(express.json());
