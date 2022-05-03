@@ -101,6 +101,7 @@ userController.userLogin = async (req, res) => {
 
   try {
     const secret = process.env.SECRET;
+    const id = user._id;
     const token = jwt.sign(
       {
         id: user._id,
