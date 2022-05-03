@@ -8,6 +8,7 @@ const router = require("./routers/router");
 
 const app = express();
 const cors = require("cors");
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 
@@ -25,7 +26,7 @@ mongoose
     `mongodb+srv://${dbUser}:${dbPassword}@cluster0.eevro.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
   )
   .then(() => {
-    app.listen(3000);
-    console.log("Conectado no banco");
+    app.listen(port);
+    console.log("Conectado no banco, rodando em http://localhost:3000");
   })
   .catch((err) => console.log(err));
