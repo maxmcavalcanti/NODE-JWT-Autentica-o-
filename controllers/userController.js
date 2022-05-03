@@ -100,7 +100,7 @@ userController.userLogin = async (req, res) => {
   //Validando o secret
 
   try {
-    const secret = process.env.secret;
+    const secret = process.env.SECRET;
     const token = jwt.sign(
       {
         id: user._id,
@@ -123,7 +123,7 @@ userController.checkToken = (req, res, next) => {
   }
 
   try {
-    const secret = process.env.secret;
+    const secret = process.env.SECRET;
     jwt.verify(token, secret);
 
     next();
