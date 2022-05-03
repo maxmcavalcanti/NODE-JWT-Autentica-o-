@@ -107,7 +107,9 @@ userController.userLogin = async (req, res) => {
       },
       secret
     );
-    res.status(200).json({ msg: "Autenticação realizada com sucesso", token });
+    res
+      .status(200)
+      .json({ msg: "Autenticação realizada com sucesso", token, id });
   } catch (error) {
     console.log(error);
   }
